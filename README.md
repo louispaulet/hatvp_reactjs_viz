@@ -1,7 +1,3 @@
-Sure! Here is an engaging `README.md` file for your GitHub repository:
-
----
-
 # HATVP ReactJS dataviz : Transparency Watch 📊
 
 Welcome to **Transparency Watch**, a project dedicated to promoting transparency and accountability in public life through insightful data visualizations. We leverage the HATVP (Haute Autorité pour la transparence de la vie publique) datasets to monitor the declarations of interest of representatives and registered lobbying organizations.
@@ -83,10 +79,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Louis Paulet - [@LouisPaulet](https://twitter.com/LouisPaulet) - email@example.com
-
 Project Link: [https://github.com/louispaulet/hatvp_reactjs_viz](https://github.com/louispaulet/hatvp_reactjs_viz)
 
----
-
-Feel free to further customize this `README.md` to better suit your project's specific details and requirements.
