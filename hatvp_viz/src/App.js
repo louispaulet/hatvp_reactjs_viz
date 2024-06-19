@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
@@ -17,6 +17,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/data" element={<Data />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/hatvp_reactjs_viz" element={<Navigate to="/" />} />
+          {/* Catch-all route to handle any undefined paths */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </Router>
