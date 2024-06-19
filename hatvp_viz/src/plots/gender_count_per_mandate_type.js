@@ -44,13 +44,22 @@ const GenderCountPerMandateType = () => {
     });
   };
 
-  const displayedData = viewMode === 'percentage' ? transformDataToPercentage(data) : data;
+  const sortDataByWomenCount = (data) => {
+    return data.sort((a, b) => b.female_count - a.female_count);
+  };
+
+  const sortDataByWomenPercentage = (data) => {
+    return data.sort((a, b) => b.female_count - a.female_count);
+  };
+
+  let displayedData = viewMode === 'percentage' ? transformDataToPercentage(data) : data;
+  displayedData = viewMode === 'percentage' ? sortDataByWomenPercentage(displayedData) : sortDataByWomenCount(displayedData);
 
   return (
     <section className="App-section" id="surname_count">
       <h2>Mandate type</h2>
       <p>We show that the gender ratio is different for each mandate type.<br/>
-      The president is a man.</p>
+      ⚠️ The "mandate type" order changes to always sort by decreasing women counts or percentages.</p>
       <div>
         <label>
           <input
