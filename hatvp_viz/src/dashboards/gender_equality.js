@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SurnameCount from './../plots/surname_count.js';
 import TotalGenderRatio from './../plots/total_gender_ratio.js';
 import GenderCountPerMandateType from './../plots/gender_count_per_mandate_type.js';
+import GenderChoropleth from './../plots/gender_choropleth.js';
 
 const GenderEquality = () => {
   return (
@@ -11,6 +12,7 @@ const GenderEquality = () => {
     <SurnameCount/>
     <TotalGenderRatio/>
     <GenderCountPerMandateType/>
+    <GenderChoropleth/>
   </div>
   );
   
