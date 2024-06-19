@@ -10,7 +10,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/hatvp_reactjs_viz">
       <div className="App">
         <Navbar />
         <Routes>
@@ -18,7 +18,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/data" element={<Data />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/hatvp_reactjs_viz" element={<Navigate to="/" />} />
           {/* 404 route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
