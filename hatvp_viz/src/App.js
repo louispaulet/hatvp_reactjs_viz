@@ -6,7 +6,7 @@ import About from './components/About';
 import Data from './components/Data';
 import Contact from './components/Contact';
 import NotFound from './components/NotFound';
-import SurnameCount from './plots/surname_count';
+import GenderEquality from './dashboards/gender_equality';
 import './App.css';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/data" element={<Data />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/surname_count" element={<SurnameCount />} />
+          <Route path="/gender_equality" element={<GenderEquality />} />
           {/* 404 route */}
           <Route path="*" element={<NotFound />} />
         </Routes>

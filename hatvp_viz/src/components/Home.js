@@ -14,7 +14,7 @@ const Home = () => {
        </div>
     {/* Links to plots */}
     <div className="App-hero">
-    <Link to="/surname_count">Check out the top 10 surnames in the dataset!</Link>
+    <Link to="/gender_equality">Check out the top 10 surnames in the dataset!</Link>
     </div>
     </div>
     
