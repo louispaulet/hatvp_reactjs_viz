@@ -10,11 +10,11 @@ const Home = () => {
           <p>
             Explore comprehensive data on the declarations of interest of representatives and registered lobbying organizations using the HATVP datasets.
           </p>
-          <a className="App-button" href="#learn-more">Learn More</a>
+          <Link className="App-button" to="/gender_equality">Check out our gender equality dashboard !</Link>
        </div>
     {/* Links to plots */}
     <div className="App-hero">
-    <Link to="/gender_equality">Check out our gender equality dashboard!</Link>
+    
     </div>
     </div>
     
