@@ -97,3 +97,22 @@ body {
   color: #61dafb;
   text-decoration: none;
 }
+
+
+.gender-equality-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.plots-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.plot-item {
+  flex: 1 1 calc(50% - 20px);
+  box-sizing: border-box;
+  padding: 10px;
+}
