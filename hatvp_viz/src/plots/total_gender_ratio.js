@@ -18,20 +18,45 @@ const TotalGenderRatio = () => {
           });
           return obj;
         });
-        setData(data);
+
+        // Calculate total count
+        const total = data.reduce((sum, entry) => sum + entry.count, 0);
+
+        // Add percentage to each entry
+        const dataWithPercentage = data.map(entry => ({
+          ...entry,
+          percentage: ((entry.count / total) * 100).toFixed(2)
+        }));
+
+        setData(dataWithPercentage);
       })
       .catch(error => {
         console.error('Error loading the CSV file:', error);
       });
   }, []);
 
-
   const COLORS = ['#4455dd', '#ffb5b5'];
+
+  // Custom tooltip to show both absolute values and percentages
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const { name, value, payload: { percentage } } = payload[0];
+      return (
+        <div className="custom-tooltip">
+          <p>{`${name} count: ${value}`}</p>
+        </div>
+      );
+    }
+    return null;
+  };
+
+  // Custom label to show percentage
+  const renderLabel = ({ name, percentage }) => `${name}: ${percentage}%`;
 
   return (
     <section className="App-section" id="surname_count">
       <h2>Total Gender Ratio</h2>
-      <p>The pie chart below shows the distribution of genders.</p>
+      <p>The pie chart below shows the total gender ratio over the complete dataset.</p>
       <ResponsiveContainer width="100%" height={400}>
         <PieChart>
           <Pie
@@ -42,13 +67,13 @@ const TotalGenderRatio = () => {
             cy="50%"
             outerRadius={150}
             fill="#8884d8"
-            label
+            label={renderLabel}
           >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
-          <Tooltip />
+          <Tooltip content={<CustomTooltip />} />
           <Legend />
         </PieChart>
       </ResponsiveContainer>
