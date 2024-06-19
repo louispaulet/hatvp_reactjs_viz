@@ -35,7 +35,7 @@ const TotalGenderRatio = () => {
       });
   }, []);
 
-  const COLORS = ['#4455dd', '#ffb5b5'];
+  const COLORS = ['#4169e1', '#ff69b4'];
 
   // Custom tooltip to show both absolute values and percentages
   const CustomTooltip = ({ active, payload }) => {
