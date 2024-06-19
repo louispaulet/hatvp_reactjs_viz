@@ -18,8 +18,9 @@ const GenderChoropleth = () => {
         console.error('Error loading the CSV file:', error);
       });
 
-    // Load GeoJSON dataset
-    fetch('https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson')
+    // Load (local) GeoJSON dataset
+    //source: 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson')
+    fetch('./datasets/departements-version-simplifiee.geojson')
       .then(response => response.json())
       .then(json => {
         setGeoData(json);
