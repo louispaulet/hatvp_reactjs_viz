@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  {/* Intro section */}
+  // Intro section
   return (
     <div className="App-hero">
         <div>

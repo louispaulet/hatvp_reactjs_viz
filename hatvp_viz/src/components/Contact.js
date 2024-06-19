@@ -5,7 +5,7 @@ const Contact = () => {
     <footer className="App-footer" id="contact">
       <h2>Contact Us</h2>
       <p>
-        If you have any questions or need further information, feel free to reach out to us at <a href="mailto:info@transparencywatch.org">info@transparencywatch.org</a>.
+        If you have any questions or need further information, feel free to not reach out to us for the moment.  
       </p>
       <p>&copy; 2024 Transparency Watch. All rights reserved.</p>
     </footer>

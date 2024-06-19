@@ -12,8 +12,9 @@ import './App.css';
 function App() {
   return (
     <Router basename="/hatvp_reactjs_viz">
-      <div className="App">
-        <Navbar />
+      <div className="App-outer">
+      <div className="App-inner">
+        <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -23,6 +24,9 @@ function App() {
           {/* 404 route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+
+      </div>
+      <Contact/>
       </div>
     </Router>
   );
