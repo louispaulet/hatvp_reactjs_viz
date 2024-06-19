@@ -77,7 +77,8 @@ const drawChoropleth = () => {
     .attr('stroke', '#fff')
     .attr('stroke-width', 0.5)
     .append('title')
-    .text(d => `${d.properties.nom}: ${d.properties.women_perc}%`);
+    .text(d => `${d.properties.nom}: ${parseFloat(d.properties.women_perc).toFixed(2)}% women`);
+
 
   // Add a legend
   const legendWidth = 300;
@@ -140,7 +141,11 @@ const drawChoropleth = () => {
   return (
     <section className="App-section" id="gender_choropleth">
       <h2>Women Percentage by Department</h2>
-      <p>This map shows the percentage of women in each French department.</p>
+      <p>This map shows the percentage of women in each French department. <br/>
+      From vibrant blue to light blue for men-heavy departments (from 0% to 50% women). <br/>
+      From light pink to vibrant pink for women-heavy departments (from 50% to 100% women). <br/>
+      We can observe that no department has many women, while several are very men-heavy.  
+      </p>
       <svg ref={svgRef} width={800} height={600}></svg>
     </section>
   );
