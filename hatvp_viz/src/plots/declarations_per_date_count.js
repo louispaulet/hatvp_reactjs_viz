@@ -32,7 +32,9 @@ const DeclarationsPerDateCount = ({ dataset }) => {
   return (
     <section className="App-section" id="surname_count">
       <h2>Posting and Publications per month</h2>
-      <p>How many declarations where posted/published each month. </p>
+      <p>How many declarations where posted/published each month. <br/>  
+      We see delays between posting and publishing when the number of submissions is exceptionally high.
+      </p>
       <div>
         <input
           type="radio"
@@ -75,7 +77,7 @@ const DeclarationsPerDateCount = ({ dataset }) => {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date"> <Label value={"date"} angle={0} dy={20} /> </XAxis>
-          <YAxis> <Label value={"count"} angle={270} dx={-20} /> </YAxis>
+          <YAxis> <Label value={"number of declarations"} angle={270} dx={-20} /> </YAxis>
           <Tooltip />
           <Legend verticalAlign="bottom" wrapperStyle={{ paddingTop: '30px' }} />
           {(displayOption === 'both' || displayOption === 'publication') && (
