@@ -147,3 +147,42 @@ body {
     border-radius: 5px; /* rounded corners */
     padding: 10px; /* optional: add padding inside the border */
 }
+
+.App-about {
+  max-width: 800px; /* Set maximum width for readability */
+  margin: 0 auto;   /* Center align the section */
+  padding: 40px 20px; /* Ensure padding remains */
+  text-align: left; /* Ensure text is left aligned */
+  background-color: #ffffff; /* White background for the section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+  border-radius: 8px; /* Rounded corners for the section */
+}
+
+.App-about h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #2c3e50; /* Darker color for the heading */
+  border-bottom: 2px solid #3498db; /* Blue underline for heading */
+  padding-bottom: 10px;
+}
+
+.App-about p {
+  font-size: 1.2em;
+  line-height: 1.6; /* Increased line height for better readability */
+  color: #34495e; /* Darker gray for paragraph text */
+}
+
+.App-about ul {
+  padding-left: 20px;
+  list-style-type: disc; /* Disc list style for bullet points */
+}
+
+.App-about ul li {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #34495e;
+}
+
+.App-about ul li strong {
+  color: #3498db; /* Blue color for strong text */
+}

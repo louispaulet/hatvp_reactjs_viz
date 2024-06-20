@@ -12,7 +12,7 @@ const Home = () => {
           </p>
           {/* Links to plots */}
           <p><Link className="App-button" to="/gender_equality">👩👨 Gender Equality Dashboard</Link></p>
-          <p><Link className="App-button" to="/publication_rate">⌛️ Publication Rate Dashboard</Link></p>
+          <p><Link className="App-button" to="/publication_rate">{'\u00A0'}{'\u00A0'}⌛️{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'} Publication Rate Dashboard</Link></p>
        </div>
     
     <div className="App-hero">
