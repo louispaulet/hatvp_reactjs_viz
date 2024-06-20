@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
-const TotalGenderRatio = ({dataset}) => {
+const TotalGenderRatio = ({ dataset }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -37,10 +37,10 @@ const TotalGenderRatio = ({dataset}) => {
 
   const COLORS = ['#4169e1', '#ff69b4'];
 
-  // Custom tooltip to show both absolute values and percentages
+  // Custom tooltip to show only absolute values
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
-      const { name, value, payload: { percentage } } = payload[0];
+      const { name, value } = payload[0];
       return (
         <div className="custom-tooltip">
           <p>{`${name} count: ${value}`}</p>

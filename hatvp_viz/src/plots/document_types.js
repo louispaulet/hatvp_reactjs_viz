@@ -14,7 +14,7 @@ const DocumentTypes = ({ dataset }) => {
           const values = row.split(',');
           let obj = {};
           headers.forEach((header, index) => {
-            obj[header] = values[index];
+            obj[header.trim()] = values[index].trim();
           });
           // Convert counts to integers
           obj['document_count'] = parseInt(obj['count'], 10);
@@ -36,7 +36,7 @@ const DocumentTypes = ({ dataset }) => {
   return (
     <section className="App-section" id="surname_count">
       <h2>Document types</h2>
-      <p>Document types explained: <br/>
+      <p>Document types explained: </p>
       <ul>
         <li><b>(DI)</b> Declaration of interests</li>
         <li><b>(DIM)</b> Declaration of substantial modification of interests</li>
@@ -47,8 +47,7 @@ const DocumentTypes = ({ dataset }) => {
         <li><b>(DSPFM)</b> Declaration of assets - end of mandate</li>
         <li><b>(Precision)</b> Assessment by the HATVP</li>
       </ul>
-      We can see that the datasets consists mostly of declaration of interests and their respective updates.  
-      </p>
+      <p> We can see that the datasets consists mostly of declaration of interests and their respective updates.  </p>
       <ResponsiveContainer width="100%" height={400}>
         <BarChart
           layout="vertical"
