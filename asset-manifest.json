@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.11f2639e.css",
-    "main.js": "/static/js/main.bd2bfba0.js",
-    "static/js/453.df22151f.chunk.js": "/static/js/453.df22151f.chunk.js",
-    "index.html": "/index.html",
-    "main.11f2639e.css.map": "/static/css/main.11f2639e.css.map",
-    "main.bd2bfba0.js.map": "/static/js/main.bd2bfba0.js.map",
-    "453.df22151f.chunk.js.map": "/static/js/453.df22151f.chunk.js.map"
+    "main.css": "https://hatvp-dataviz.thefrenchartist.dev/static/css/main.11f2639e.css",
+    "main.js": "https://hatvp-dataviz.thefrenchartist.dev/static/js/main.b27c64b9.js",
+    "static/js/453.df22151f.chunk.js": "https://hatvp-dataviz.thefrenchartist.dev/static/js/453.df22151f.chunk.js",
+    "index.html": "https://hatvp-dataviz.thefrenchartist.dev/index.html",
+    "main.11f2639e.css.map": "https://hatvp-dataviz.thefrenchartist.dev/static/css/main.11f2639e.css.map",
+    "main.b27c64b9.js.map": "https://hatvp-dataviz.thefrenchartist.dev/static/js/main.b27c64b9.js.map",
+    "453.df22151f.chunk.js.map": "https://hatvp-dataviz.thefrenchartist.dev/static/js/453.df22151f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.11f2639e.css",
-    "static/js/main.bd2bfba0.js"
+    "static/js/main.b27c64b9.js"
   ]
 }
