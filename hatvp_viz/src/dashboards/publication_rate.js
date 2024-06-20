@@ -14,9 +14,10 @@ const PublicationRate = () => {
 
   return (
     <div className="gender-equality-container">
-      <h1>Publication rate of HATVP declarations</h1>
+      <h1>⌛️ Publication rate of HATVP declarations</h1>
       <p>This dashboard shows date-centric plots to analyze the posting and publication rate of declarations. <br/>
-      The goal is to show how fast, or slow, the HATVP works on the submitted declarations.  
+      The goal is to show how fast, or slow, the HATVP works on the submitted declarations.  <br/>  
+      We also show the document types submitted, as well as their geographical origin.   
       </p>
       <div className="dataset-selector">
       <label> Choose between all declarations or only the last declaration for each unique individual:  </label>
