@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label, Cell } from 'recharts';
 
 const DocumentTypes = ({ dataset }) => {
   const [data, setData] = useState([]);
-  const [displayOption, setDisplayOption] = useState('both');
 
   useEffect(() => {
     fetch(`./datasets/document_type_count_${dataset}.csv`)

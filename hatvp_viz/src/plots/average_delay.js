@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 const AverageDelay = ({ dataset }) => {
   const [data, setData] = useState([]);
-  const [displayOption, setDisplayOption] = useState('both');
+  
 
   useEffect(() => {
     fetch(`./datasets/average_publication_delay_${dataset}.csv`)
