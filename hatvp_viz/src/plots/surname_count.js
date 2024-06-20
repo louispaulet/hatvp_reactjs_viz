@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
 
-const SurnameCount = () => {
+const SurnameCount = ({dataset}) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('./datasets/top_surnames.csv')
+    fetch(`./datasets/top_surnames_${dataset}.csv`)
       .then(response => response.text())
       .then(text => {
         const rows = text.split('\n').filter(row => row.trim().length > 0); // Filter out empty rows
@@ -23,7 +23,7 @@ const SurnameCount = () => {
       .catch(error => {
         console.error('Error loading the CSV file:', error);
       });
-  }, []);
+  }, [dataset]);
 
   // Prepare data for the stacked bar chart
   const genderCounts = data.reduce((acc, cur) => {

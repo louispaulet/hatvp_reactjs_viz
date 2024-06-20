@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 
-const GenderChoropleth = () => {
+const GenderChoropleth = ({dataset}) => {
   const [data, setData] = useState([]);
   const [geoData, setGeoData] = useState(null);
   const svgRef = useRef();
 
   useEffect(() => {
     // Load CSV dataset
-    fetch('./datasets/women_percentage_per_departement.csv')
+    fetch(`./datasets/women_percentage_per_departement_${dataset}.csv`)
       .then(response => response.text())
       .then(text => {
         const rows = d3.csvParse(text);
@@ -28,7 +28,7 @@ const GenderChoropleth = () => {
       .catch(error => {
         console.error('Error loading the GeoJSON file:', error);
       });
-  }, []);
+  }, [dataset]);
 
   useEffect(() => {
     if (data.length > 0 && geoData) {

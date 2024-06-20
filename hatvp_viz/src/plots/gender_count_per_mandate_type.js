@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
 
-const GenderCountPerMandateType = () => {
+const GenderCountPerMandateType = ({dataset}) => {
   const [data, setData] = useState([]);
   const [viewMode, setViewMode] = useState('absolute'); // 'absolute' or 'percentage'
 
   useEffect(() => {
-    fetch('./datasets/gender_ratio_per_type_mandat.csv')
+    fetch(`./datasets/gender_ratio_per_type_mandat_${dataset}.csv`)
       .then(response => response.text())
       .then(text => {
         const rows = text.split('\n').filter(row => row.trim().length > 0); // Filter out empty rows
@@ -25,7 +25,7 @@ const GenderCountPerMandateType = () => {
       .catch(error => {
         console.error('Error loading the CSV file:', error);
       });
-  }, []);
+  }, [dataset]);
 
   const handleToggleChange = (event) => {
     setViewMode(event.target.value);

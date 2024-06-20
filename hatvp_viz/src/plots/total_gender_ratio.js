@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
-const TotalGenderRatio = () => {
+const TotalGenderRatio = ({dataset}) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('./datasets/total_gender_ratio.csv')
+    fetch(`./datasets/total_gender_ratio_${dataset}.csv`)
       .then(response => response.text())
       .then(text => {
         const rows = text.split('\n').filter(row => row.trim().length > 0); // Filter out empty rows
@@ -33,7 +33,7 @@ const TotalGenderRatio = () => {
       .catch(error => {
         console.error('Error loading the CSV file:', error);
       });
-  }, []);
+  }, [dataset]);
 
   const COLORS = ['#4169e1', '#ff69b4'];
 
