@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DeclarationsPerDateCount from './../plots/declarations_per_date_count.js';
 import AverageDelay from './../plots/average_delay.js';
 import GenderCountPerMandateType from './../plots/gender_count_per_mandate_type.js';
-import GenderChoropleth from './../plots/gender_choropleth.js';
+import PublicationsChoropleth from './../plots/publications_choropleth.js';
 import './../App.css';
 
 const PublicationRate = () => {
@@ -43,7 +43,7 @@ const PublicationRate = () => {
         <div className="plot-item"><DeclarationsPerDateCount dataset={dataset} /></div>
         <div className="plot-item"><AverageDelay dataset={dataset} /></div>
         <div className="plot-item"><GenderCountPerMandateType dataset={dataset} /></div>
-        <div className="plot-item"><GenderChoropleth dataset={dataset} /></div>
+        <div className="plot-item"><PublicationsChoropleth dataset={dataset} /></div>
       </div>
       <div className="dataset-selector">
       <label> Choose between all declarations or only the last declaration for each unique individual:  </label>
