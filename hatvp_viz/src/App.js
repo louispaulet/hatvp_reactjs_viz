@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename="/hatvp_reactjs_viz">
+    <Router basename="/">
       <div className="App-outer">
       <div className="App-inner">
         <Navbar/>
