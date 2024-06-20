@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SurnameCount from './../plots/surname_count.js';
+import DeclarationsPerDateCount from './../plots/declarations_per_date_count.js';
 import TotalGenderRatio from './../plots/total_gender_ratio.js';
 import GenderCountPerMandateType from './../plots/gender_count_per_mandate_type.js';
 import GenderChoropleth from './../plots/gender_choropleth.js';
@@ -40,7 +40,7 @@ const PublicationRate = () => {
         </label>
       </div>
       <div className="plots-grid">
-        <div className="plot-item"><SurnameCount dataset={dataset} /></div>
+        <div className="plot-item"><DeclarationsPerDateCount dataset={dataset} /></div>
         <div className="plot-item"><TotalGenderRatio dataset={dataset} /></div>
         <div className="plot-item"><GenderCountPerMandateType dataset={dataset} /></div>
         <div className="plot-item"><GenderChoropleth dataset={dataset} /></div>
