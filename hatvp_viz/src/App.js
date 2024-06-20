@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
@@ -12,23 +12,22 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename="/">
+    <Router>
       <div className="App-outer">
-      <div className="App-inner">
-        <Navbar/>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/data" element={<Data />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/gender_equality" element={<GenderEquality />} />
-          <Route path="/publication_rate" element={<PublicationRate />} />
-          {/* 404 route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-
-      </div>
-      <Contact/>
+        <div className="App-inner">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/data" element={<Data />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/gender_equality" element={<GenderEquality />} />
+            <Route path="/publication_rate" element={<PublicationRate />} />
+            {/* 404 route */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+        <Contact />
       </div>
     </Router>
   );

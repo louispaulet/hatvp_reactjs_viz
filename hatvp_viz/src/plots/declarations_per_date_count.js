@@ -15,7 +15,7 @@ const DeclarationsPerDateCount = ({ dataset }) => {
           const values = row.split(',');
           let obj = {};
           headers.forEach((header, index) => {
-            obj[header] = values[index];
+            obj[header.trim()] = values[index].trim();
           });
           // Convert counts to integers
           obj['date_publication_count'] = parseInt(obj['date_publication_count'], 10);

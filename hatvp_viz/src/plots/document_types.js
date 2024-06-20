@@ -23,7 +23,6 @@ const DocumentTypes = ({ dataset }) => {
         // Sort data by document_count in decreasing order
         data.sort((a, b) => b.document_count - a.document_count);
         setData(data);
-        console.log(data);
       })
       .catch(error => {
         console.error('Error loading the CSV file:', error);

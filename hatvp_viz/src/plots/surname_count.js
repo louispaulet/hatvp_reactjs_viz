@@ -36,7 +36,6 @@ const SurnameCount = ({dataset}) => {
   }, {});
 
   const chartData = Object.values(genderCounts);
-  console.log(chartData)
 
   return (
     <section className="App-section" id="surname_count">
