@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 
 const GenderCountPerMandateType = ({dataset}) => {
   const [data, setData] = useState([]);
-  const [viewMode, setViewMode] = useState('absolute'); // 'absolute' or 'percentage'
+  const [viewMode, setViewMode] = useState('percentage'); // 'absolute' or 'percentage'
 
   useEffect(() => {
     fetch(`./datasets/gender_ratio_per_type_mandat_${dataset}.csv`)
@@ -64,20 +64,20 @@ const GenderCountPerMandateType = ({dataset}) => {
         <label>
           <input
             type="radio"
-            value="absolute"
-            checked={viewMode === 'absolute'}
-            onChange={handleToggleChange}
-          />
-          Absolute Values
-        </label>
-        <label>
-          <input
-            type="radio"
             value="percentage"
             checked={viewMode === 'percentage'}
             onChange={handleToggleChange}
           />
           Percentage
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="absolute"
+            checked={viewMode === 'absolute'}
+            onChange={handleToggleChange}
+          />
+          Absolute Values
         </label>
       </div>
       <ResponsiveContainer width="100%" height={400}>
