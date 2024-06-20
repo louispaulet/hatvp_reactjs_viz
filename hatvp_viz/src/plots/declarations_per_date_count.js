@@ -31,8 +31,8 @@ const DeclarationsPerDateCount = ({ dataset }) => {
 
   return (
     <section className="App-section" id="surname_count">
-      <h2>Publications per day</h2>
-      <p>How many declarations where published each day. </p>
+      <h2>Posting and Publications per month</h2>
+      <p>How many declarations where posted/published each month. </p>
       <div>
         <input
           type="radio"
