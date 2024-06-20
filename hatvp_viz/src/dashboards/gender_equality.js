@@ -14,7 +14,7 @@ const GenderEquality = () => {
 
   return (
     <div className="gender-equality-container">
-      <h1>Gender Equality Analysis on HATVP Data</h1>
+      <h1>👩👨 Gender Equality Analysis on HATVP Data</h1>
       <p>This dashboard shows gendered plots to reveal the existing imbalance between men and women representatives. <br/>
       The gender equality is measured through surnames, ratio between "Mr" and "Mme" civility prefix, mandate type, and ratio of women to men per geographical region.
       </p>

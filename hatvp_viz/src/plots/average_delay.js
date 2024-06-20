@@ -3,7 +3,6 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 const AverageDelay = ({ dataset }) => {
   const [data, setData] = useState([]);
-  
 
   useEffect(() => {
     fetch(`./datasets/average_publication_delay_${dataset}.csv`)
@@ -15,7 +14,7 @@ const AverageDelay = ({ dataset }) => {
           const values = row.split(',');
           let obj = {};
           headers.forEach((header, index) => {
-            obj[header] = values[index];
+            obj[header.trim()] = values[index].trim();
           });
           // Convert average delays to integers
           obj['year'] = parseInt(obj['year'], 10);
@@ -23,7 +22,7 @@ const AverageDelay = ({ dataset }) => {
           return obj;
         });
         setData(data);
-        console.log(data)
+        console.log(data);
       })
       .catch(error => {
         console.error('Error loading the CSV file:', error);
