@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
 
-const DeclarationsPerDateCount = ({dataset}) => {
+const DeclarationsPerDateCount = ({ dataset }) => {
   const [data, setData] = useState([]);
+  const [displayOption, setDisplayOption] = useState('both');
 
   useEffect(() => {
     fetch(`./datasets/publications_per_month_${dataset}.csv`)
@@ -22,8 +23,6 @@ const DeclarationsPerDateCount = ({dataset}) => {
           return obj;
         });
         setData(data);
-        console.log('inside')
-        console.log(data)
       })
       .catch(error => {
         console.error('Error loading the CSV file:', error);
@@ -34,6 +33,37 @@ const DeclarationsPerDateCount = ({dataset}) => {
     <section className="App-section" id="surname_count">
       <h2>Publications per day</h2>
       <p>How many declarations where published each day. </p>
+      <div>
+        <input
+          type="radio"
+          id="both"
+          name="displayOption"
+          value="both"
+          checked={displayOption === 'both'}
+          onChange={() => setDisplayOption('both')}
+        />
+        <label htmlFor="both">Show both</label>
+
+        <input
+          type="radio"
+          id="posting"
+          name="displayOption"
+          value="posting"
+          checked={displayOption === 'posting'}
+          onChange={() => setDisplayOption('posting')}
+        />
+        <label htmlFor="posting">Only posting dates</label>
+
+        <input
+          type="radio"
+          id="publication"
+          name="displayOption"
+          value="publication"
+          checked={displayOption === 'publication'}
+          onChange={() => setDisplayOption('publication')}
+        />
+        <label htmlFor="publication">Only publication dates</label>
+      </div>
       <ResponsiveContainer width="100%" height={400}>
         <LineChart
           width={500}
@@ -45,11 +75,15 @@ const DeclarationsPerDateCount = ({dataset}) => {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date"> <Label value={"date"} angle={0} dy={20} /> </XAxis>
-          <YAxis> <Label value={"count"} angle={270} dx={-20}/> </YAxis>
+          <YAxis> <Label value={"count"} angle={270} dx={-20} /> </YAxis>
           <Tooltip />
-          <Legend  verticalAlign="bottom" wrapperStyle={{ paddingTop: '30px' }} />
-          <Line type="monotone" dataKey="date_publication_count" stroke="#5E8C31" />
-          <Line type="monotone" dataKey="date_depot_count" stroke="#AAAAAA" />
+          <Legend verticalAlign="bottom" wrapperStyle={{ paddingTop: '30px' }} />
+          {(displayOption === 'both' || displayOption === 'publication') && (
+            <Line type="monotone" dataKey="date_publication_count" stroke="#5E8C31" />
+          )}
+          {(displayOption === 'both' || displayOption === 'posting') && (
+            <Line type="monotone" dataKey="date_depot_count" stroke="#AAAAAA" />
+          )}
         </LineChart>
       </ResponsiveContainer>
     </section>
