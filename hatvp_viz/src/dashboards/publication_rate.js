@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DeclarationsPerDateCount from './../plots/declarations_per_date_count.js';
-import TotalGenderRatio from './../plots/total_gender_ratio.js';
+import AverageDelay from './../plots/average_delay.js';
 import GenderCountPerMandateType from './../plots/gender_count_per_mandate_type.js';
 import GenderChoropleth from './../plots/gender_choropleth.js';
 import './../App.css';
@@ -41,7 +41,7 @@ const PublicationRate = () => {
       </div>
       <div className="plots-grid">
         <div className="plot-item"><DeclarationsPerDateCount dataset={dataset} /></div>
-        <div className="plot-item"><TotalGenderRatio dataset={dataset} /></div>
+        <div className="plot-item"><AverageDelay dataset={dataset} /></div>
         <div className="plot-item"><GenderCountPerMandateType dataset={dataset} /></div>
         <div className="plot-item"><GenderChoropleth dataset={dataset} /></div>
       </div>
