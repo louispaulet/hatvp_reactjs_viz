@@ -1,0 +1,49 @@
+/* Main container with margins */
+.container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px; /* Adjust this value for desired width */
+}
+
+/* Ensure nested tables take up the full width of the container */
+.nested-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px; /* Add space between tables */
+}
+
+.nested-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.key-cell {
+    background-color: #f2f2f2;
+    width: 20%;
+    font-weight: bold;
+}
+
+.value-cell {
+    background-color: #ffffff;
+}
+
+.nested-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.nested-table tr:hover {
+    background-color: #ddd;
+}
+
+.item-container {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.item-container h3 {
+    margin-top: 0;
+}
