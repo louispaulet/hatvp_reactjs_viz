@@ -42,7 +42,7 @@ const TotalGenderRatio = ({ dataset }) => {
     if (active && payload && payload.length) {
       const { name, value } = payload[0];
       return (
-        <div className="custom-tooltip">
+        <div className="bg-white p-2 shadow rounded text-sm">
           <p>{`${name} count: ${value}`}</p>
         </div>
       );
@@ -54,9 +54,9 @@ const TotalGenderRatio = ({ dataset }) => {
   const renderLabel = ({ name, percentage }) => `${name}: ${percentage}%`;
 
   return (
-    <section className="App-section" id="surname_count">
-      <h2>Total Gender Ratio</h2>
-      <p>The pie chart below shows the total gender ratio over the complete dataset.</p>
+    <section className="mb-6 p-4 bg-white">
+      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Total Gender Ratio</h2>
+      <p className="text-gray-700 mb-4">The pie chart below shows the total gender ratio over the complete dataset.</p>
       <ResponsiveContainer width="100%" height={400}>
         <PieChart>
           <Pie

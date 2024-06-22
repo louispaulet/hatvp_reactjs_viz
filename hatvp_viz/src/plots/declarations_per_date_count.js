@@ -30,41 +30,49 @@ const DeclarationsPerDateCount = ({ dataset }) => {
   }, [dataset]);
 
   return (
-    <section className="App-section" id="surname_count">
-      <h2>Posting and Publications per month</h2>
-      <p>How many declarations where posted/published each month. <br/>  
-      We see delays between posting and publishing when the number of submissions is exceptionally high.
+    <section className="mb-6 p-4 bg-white">
+      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Posting and Publications per month</h2>
+      <p className="text-gray-700 mb-4">
+        How many declarations where posted/published each month. <br/>
+        We see delays between posting and publishing when the number of submissions is exceptionally high.
       </p>
-      <div>
-        <input
-          type="radio"
-          id="both"
-          name="displayOption"
-          value="both"
-          checked={displayOption === 'both'}
-          onChange={() => setDisplayOption('both')}
-        />
-        <label htmlFor="both">Show both</label>
-
-        <input
-          type="radio"
-          id="posting"
-          name="displayOption"
-          value="posting"
-          checked={displayOption === 'posting'}
-          onChange={() => setDisplayOption('posting')}
-        />
-        <label htmlFor="posting">Only posting dates</label>
-
-        <input
-          type="radio"
-          id="publication"
-          name="displayOption"
-          value="publication"
-          checked={displayOption === 'publication'}
-          onChange={() => setDisplayOption('publication')}
-        />
-        <label htmlFor="publication">Only publication dates</label>
+      <div className="mb-4">
+        <label className="inline-flex items-center mr-6">
+          <input
+            type="radio"
+            id="both"
+            name="displayOption"
+            value="both"
+            checked={displayOption === 'both'}
+            onChange={() => setDisplayOption('both')}
+            className="form-radio text-indigo-600"
+          />
+          <span className="ml-2 text-gray-800">Show both</span>
+        </label>
+        <label className="inline-flex items-center mr-6">
+          <input
+            type="radio"
+            id="posting"
+            name="displayOption"
+            value="posting"
+            checked={displayOption === 'posting'}
+            onChange={() => setDisplayOption('posting')}
+            className="form-radio text-indigo-600"
+          />
+          <span className="ml-2 text-gray-800">Only posting dates</span>
+        </label>
+        <label className="inline-flex items-center">
+          <input
+            type="radio"
+            id="publication"
+            name="displayOption"
+            value="publication"
+            checked={displayOption === 'publication'}
+            onChange={() => setDisplayOption('publication')}
+            className="form-radio text-indigo-600"
+          />
+          <span className="ml-2 text-gray-800">Only publication dates</span>
+        </label>
       </div>
       <ResponsiveContainer width="100%" height={400}>
         <LineChart
@@ -76,8 +84,8 @@ const DeclarationsPerDateCount = ({ dataset }) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date"> <Label value={"date"} angle={0} dy={20} /> </XAxis>
-          <YAxis> <Label value={"number of declarations"} angle={270} dx={-20} /> </YAxis>
+          <XAxis dataKey="date"><Label value="Date" angle={0} dy={20} /></XAxis>
+          <YAxis><Label value="Number of Declarations" angle={270} dx={-20} /></YAxis>
           <Tooltip />
           <Legend verticalAlign="bottom" wrapperStyle={{ paddingTop: '30px' }} />
           {(displayOption === 'both' || displayOption === 'publication') && (

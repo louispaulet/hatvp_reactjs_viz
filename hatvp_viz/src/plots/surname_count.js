@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
 
-const SurnameCount = ({dataset}) => {
+const SurnameCount = ({ dataset }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -38,10 +38,12 @@ const SurnameCount = ({dataset}) => {
   const chartData = Object.values(genderCounts);
 
   return (
-    <section className="App-section" id="surname_count">
-      <h2>Top 10 surnames in the dataset</h2>
-      <p>Here is the bar chart showing the top 10 'prenom' (surnames) with respective number of occurrences. <br/>
-      Notice how the overwhelming majority is male gendered.</p>
+    <section className="mb-6 p-4 bg-white">
+      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Top 10 surnames in the dataset</h2>
+      <p className="text-gray-700 mb-4">
+        Here is the bar chart showing the top 10 'prenom' (surnames) with respective number of occurrences. <br />
+        Notice how the overwhelming majority is male gendered.
+      </p>
       <ResponsiveContainer width="100%" height={400}>
         <BarChart
           width={500}
@@ -52,10 +54,14 @@ const SurnameCount = ({dataset}) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="prenom"> <Label value={"Surname"} angle={0} dy={20} /> </XAxis>
-          <YAxis> <Label value={"Count"} angle={270} dx={-20} /> </YAxis>
+          <XAxis dataKey="prenom">
+            <Label value="Surname" angle={0} dy={20} />
+          </XAxis>
+          <YAxis>
+            <Label value="Count" angle={270} dx={-20} />
+          </YAxis>
           <Tooltip />
-          <Legend  verticalAlign="bottom" wrapperStyle={{ paddingTop: '30px' }} />
+          <Legend verticalAlign="bottom" wrapperStyle={{ paddingTop: '30px' }} />
           <Bar dataKey="male" stackId="a" fill="#4169e1" />
           <Bar dataKey="female" stackId="a" fill="#ff69b4" />
         </BarChart>

@@ -19,7 +19,6 @@ const PublicationsChoropleth = ({ dataset }) => {
       });
 
     // Load (local) GeoJSON dataset
-    //source: 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson')
     fetch('./datasets/departements-version-simplifiee.geojson')
       .then(response => response.json())
       .then(json => {
@@ -115,13 +114,13 @@ const PublicationsChoropleth = ({ dataset }) => {
   }, [data, geoData]);
 
   return (
-    <section className="App-section" id="publications_choropleth">
-      <h2>Number of publications per Department</h2>
-      <p>
+    <section className="mb-6 p-4 bg-white">
+      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Number of publications per Department</h2>
+      <p className="text-gray-700 mb-4">
         This map shows the number of declarations published in each French department. <br />
-        Notice how the <a href="https://en.wikipedia.org/wiki/Empty_diagonal" target="_blank" rel="noopener noreferrer">empty diagonal</a> is visible.
+        Notice how the <a className="text-indigo-600 hover:underline" href="https://en.wikipedia.org/wiki/Empty_diagonal" target="_blank" rel="noopener noreferrer">empty diagonal</a> is visible.
       </p>
-      <svg ref={svgRef} width={800} height={600}></svg>
+      <svg ref={svgRef} className="w-full h-auto" viewBox="0 0 800 600"></svg>
     </section>
   );
 };
