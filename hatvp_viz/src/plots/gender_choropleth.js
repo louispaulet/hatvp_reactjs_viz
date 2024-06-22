@@ -19,7 +19,6 @@ const GenderChoropleth = ({ dataset }) => {
       });
 
     // Load (local) GeoJSON dataset
-    //source: 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson')
     fetch('./datasets/departements-version-simplifiee.geojson')
       .then(response => response.json())
       .then(json => {
@@ -137,14 +136,15 @@ const GenderChoropleth = ({ dataset }) => {
   }, [data, geoData]);
 
   return (
-    <section className="App-section" id="gender_choropleth">
-      <h2>Women Percentage by Department</h2>
-      <p>This map shows the percentage of women in each French department. <br />
+    <section className="mb-6 p-4 bg-white">
+      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Women Percentage by Department</h2>
+      <p className="text-gray-700 mb-4">
+        This map shows the percentage of women in each French department. <br />
         From vibrant blue to light blue for men-heavy departments (from 0% to 50% women). <br />
         From light pink to vibrant pink for women-heavy departments (from 50% to 100% women). <br />
         We can observe that no department has many women, while several are very men-heavy.
       </p>
-      <svg ref={svgRef} width={800} height={600}></svg>
+      <svg ref={svgRef} className="w-full h-auto" viewBox="0 0 800 600"></svg>
     </section>
   );
 };

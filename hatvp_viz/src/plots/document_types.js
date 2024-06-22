@@ -33,10 +33,10 @@ const DocumentTypes = ({ dataset }) => {
   const COLORS = ['#0072B2', '#D55E00', '#E69F00', '#56B4E9', '#009E73', '#F0E442', '#CC79A7', '#999999'];
 
   return (
-    <section className="App-section" id="surname_count">
-      <h2>Document types</h2>
-      <p>Document types explained: </p>
-      <ul>
+    <section className="mb-6 p-4 bg-white">
+      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Document types</h2>
+      <p className="text-gray-700 mb-4">Document types explained:</p>
+      <ul className="list-disc list-inside text-gray-700 mb-4">
         <li><b>(DI)</b> Declaration of interests</li>
         <li><b>(DIM)</b> Declaration of substantial modification of interests</li>
         <li><b>(DIAM)</b> Declaration of substantial modification of interests and activities</li>
@@ -46,7 +46,7 @@ const DocumentTypes = ({ dataset }) => {
         <li><b>(DSPFM)</b> Declaration of assets - end of mandate</li>
         <li><b>(Precision)</b> Assessment by the HATVP</li>
       </ul>
-      <p> We can see that the datasets consists mostly of declaration of interests and their respective updates.  </p>
+      <p className="text-gray-700 mb-4">We can see that the datasets consist mostly of declarations of interests and their respective updates.</p>
       <ResponsiveContainer width="100%" height={400}>
         <BarChart
           layout="vertical"
@@ -59,13 +59,12 @@ const DocumentTypes = ({ dataset }) => {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis type="number">
-            <Label value={"Number of documents"} angle={0} position="insideBottom" offset={-5} dy={10} />
+            <Label value="Number of documents" angle={0} position="insideBottom" offset={-5} dy={10} />
           </XAxis>
           <YAxis type="category" dataKey="document_type">
-            <Label value={"Document type"} angle={270} position="center" dx={-50} />
+            <Label value="Document type" angle={270} position="center" dx={-50} />
           </YAxis>
           <Tooltip />
-          
           <Bar dataKey="document_count">
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

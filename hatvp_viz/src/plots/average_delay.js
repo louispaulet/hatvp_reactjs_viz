@@ -29,10 +29,11 @@ const AverageDelay = ({ dataset }) => {
   }, [dataset]);
 
   return (
-    <section className="App-section" id="surname_count">
-      <h2>Average delay between posting and publishing</h2>
-      <p>How many days pass, on average, between the date of posting and the date of publishing for a declaration. <br/>
-      We observe a downwards trend, indicating that the data is being processed faster and faster.
+    <section className="mb-6 p-4 bg-white">
+      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Average delay between posting and publishing</h2>
+      <p className="text-gray-700 mb-4">
+        How many days pass, on average, between the date of posting and the date of publishing for a declaration. <br/>
+        We observe a downwards trend, indicating that the data is being processed faster and faster.
       </p>
       <ResponsiveContainer width="100%" height={400}>
         <LineChart
@@ -44,8 +45,12 @@ const AverageDelay = ({ dataset }) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="year"> <Label value={"Posting year"} angle={0} dy={20} /> </XAxis>
-          <YAxis> <Label value={"average publication delay in days"} angle={270} dx={-20} /> </YAxis>
+          <XAxis dataKey="year">
+            <Label value="Posting year" angle={0} dy={20} />
+          </XAxis>
+          <YAxis>
+            <Label value="Average publication delay in days" angle={270} dx={-20} />
+          </YAxis>
           <Tooltip />
           <Legend verticalAlign="bottom" wrapperStyle={{ paddingTop: '30px' }} />
           <Line type="monotone" dataKey="average_publication_delay" stroke="#5E8C31" />

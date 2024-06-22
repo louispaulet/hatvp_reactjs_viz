@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
 
-const GenderCountPerMandateType = ({dataset}) => {
+const GenderCountPerMandateType = ({ dataset }) => {
   const [data, setData] = useState([]);
   const [viewMode, setViewMode] = useState('percentage'); // 'absolute' or 'percentage'
 
@@ -55,28 +55,32 @@ const GenderCountPerMandateType = ({dataset}) => {
   displayedData = viewMode === 'percentage' ? sortDataByWomenPercentage(displayedData) : sortDataByWomenCount(displayedData);
 
   return (
-    <section className="App-section" id="surname_count">
-      <h2>Mandate type</h2>
-      <p>We show that the gender ratio is different for each mandate type.<br/>
-      ⚠️ The "mandate type" order changes to always sort by decreasing women counts or percentages.</p>
-      <div>
-        <label>
+    <section className="mb-6 p-4 bg-white">
+      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Mandate type</h2>
+      <p className="text-gray-700 mb-4">
+        We show that the gender ratio is different for each mandate type.<br />
+        ⚠️ The "mandate type" order changes to always sort by decreasing women counts or percentages.
+      </p>
+      <div className="mb-4">
+        <label className="inline-flex items-center mr-4">
           <input
             type="radio"
             value="percentage"
             checked={viewMode === 'percentage'}
             onChange={handleToggleChange}
+            className="form-radio text-indigo-600"
           />
-          Percentage
+          <span className="ml-2 text-gray-800">Percentage</span>
         </label>
-        <label>
+        <label className="inline-flex items-center">
           <input
             type="radio"
             value="absolute"
             checked={viewMode === 'absolute'}
             onChange={handleToggleChange}
+            className="form-radio text-indigo-600"
           />
-          Absolute Values
+          <span className="ml-2 text-gray-800">Absolute Values</span>
         </label>
       </div>
       <ResponsiveContainer width="100%" height={400}>
@@ -93,7 +97,7 @@ const GenderCountPerMandateType = ({dataset}) => {
             <Label value="Mandate type" angle={0} dy={20} />
           </XAxis>
           <YAxis>
-            <Label value="Count" angle={270} dx={-30} />
+            <Label value={viewMode === 'percentage' ? "Percentage" : "Count"} angle={270} dx={-30} />
           </YAxis>
           <Tooltip />
           <Legend verticalAlign="bottom" wrapperStyle={{ paddingTop: '30px' }} />
