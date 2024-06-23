@@ -2,22 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  // Intro section
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-400 to-blue-600 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 p-10 bg-white rounded-xl shadow-lg">
+    <div className="min-h-screen bg-gradient-to-r from-blue-300 via-gray-200 to-red-300 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-lg w-full space-y-12 p-12 bg-white rounded-xl shadow-lg">
         <div className="text-center">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-2">Monitoring Transparency in Public Life</h2>
-          <p className="mt-2 text-lg text-gray-700">
+          <h2 className="text-5xl font-extrabold text-gray-900 mb-4">Monitoring Transparency in Public Life</h2>
+          <p className="mt-4 text-xl text-gray-700">
             Explore comprehensive data on the declarations of interest of representatives and registered lobbying organizations using the HATVP datasets.
           </p>
         </div>
         
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-6">
           {/* Links to plots */}
-          <Link className="bg-indigo-600 text-white text-center py-3 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition-transform transform hover:scale-105" to="/gender_equality">👩👨 Gender Equality Dashboard</Link>
-          <Link className="bg-yellow-500 text-white text-center py-3 px-6 rounded-lg shadow-md hover:bg-yellow-600 transition-transform transform hover:scale-105" to="/publication_rate">⌛️ Publication Rate Dashboard</Link>
-          <Link className="bg-green-500 text-white text-center py-3 px-6 rounded-lg shadow-md hover:bg-green-600 transition-transform transform hover:scale-105" to="/declaration_reader">📜 Declaration Reader</Link>
+          <Link className="border-2 border-blue-700 text-blue-700 text-center py-4 px-8 rounded-lg shadow-lg hover:bg-blue-700 hover:text-white transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-3 text-lg" to="/gender_equality">
+            <span role="img" aria-label="gender equality">👩👨</span>
+            <span>Gender Equality Dashboard</span>
+          </Link>
+          <Link className="border-2 border-gray-700 text-gray-700 text-center py-4 px-8 rounded-lg shadow-lg hover:bg-gray-700 hover:text-white transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-3 text-lg" to="/publication_rate">
+            <span role="img" aria-label="publication rate">⌛️</span>
+            <span>Publication Rate Dashboard</span>
+          </Link>
+          <Link className="border-2 border-green-700 text-green-700 text-center py-4 px-8 rounded-lg shadow-lg hover:bg-green-700 hover:text-white transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-3 text-lg" to="/declaration_reader">
+            <span role="img" aria-label="declaration reader">📜</span>
+            <span>Declaration Reader</span>
+          </Link>
         </div>
       </div>
     </div>
