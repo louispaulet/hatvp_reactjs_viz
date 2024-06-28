@@ -7,6 +7,7 @@ import Data from './components/Data';
 import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import GenderEquality from './dashboards/gender_equality';
+import ReportedRevenue from './dashboards/reported_revenue';
 import PublicationRate from './dashboards/publication_rate';
 import DeclarationReader from './components/declaration_reader';
 import './App.css';
@@ -23,6 +24,7 @@ function App() {
             <Route path="/data" element={<Data />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gender_equality" element={<GenderEquality />} />
+            <Route path="/reported_revenue" element={<ReportedRevenue />} />
             <Route path="/publication_rate" element={<PublicationRate />} />
             <Route path="/declaration_reader" element={<DeclarationReader />} />
             {/* 404 route */}
