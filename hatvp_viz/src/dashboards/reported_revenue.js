@@ -56,8 +56,8 @@ const ReportedRevenue = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div className=" rounded-lg shadow p-4"><RevenuePerCategory /></div>
           <div className=" rounded-lg shadow p-4"><RevenuePerCategoryPerYear /></div>
-          <div className=" rounded-lg shadow p-4"><RevenuePerGenderPerYear /></div>
           <div className=" rounded-lg shadow p-4"><TotalGenderRevenue /></div>
+          <div className=" rounded-lg shadow p-4"><RevenuePerGenderPerYear /></div>
         </div>
 
         <div className="mb-6">

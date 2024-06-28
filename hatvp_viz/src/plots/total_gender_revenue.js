@@ -43,13 +43,14 @@ const TotalGenderRevenue = () => {
 
   const COLORS = ['#4169e1', '#ff69b4'];
 
-  // Custom tooltip to show only absolute values
+  // Custom tooltip to show values in M€ (millions of euros)
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       const { name, value } = payload[0];
+      const valueInMillions = (value / 1e6).toFixed(2);
       return (
         <div className="bg-white p-2 shadow rounded text-sm">
-          <p>{`${name} amount: ${value}`}</p>
+          <p>{`${name} amount: ${valueInMillions} M€`}</p>
         </div>
       );
     }
@@ -61,7 +62,7 @@ const TotalGenderRevenue = () => {
 
   return (
     <section className="mb-6 p-4 bg-white">
-      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Total Gender Ratio</h2>
+      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Total revenues reported by gender</h2>
       <p className="text-gray-700 mb-4">The pie chart below shows the total gender ratio over the complete dataset.</p>
       <ResponsiveContainer width="100%" height={400}>
         <PieChart>
