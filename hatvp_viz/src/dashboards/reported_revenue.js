@@ -15,13 +15,13 @@ const ReportedRevenue = () => {
     <div className="min-h-screen bg-gradient-to-r from-blue-300 via-gray-200 to-red-300 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl w-full space-y-12 p-12 bg-white rounded-xl shadow-lg">
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold text-gray-900 mb-4">Reported revenue!</h1>
+          <h1 className="text-5xl font-extrabold text-gray-900 mb-4"> 💰 Reported revenue</h1>
           <p className="mt-4 text-xl text-gray-700">
-            This dashboard shows date-centric plots to analyze the posting and publication rate of declarations.
+            This dashboard shows money-centric plots. 
             <br />
-            The goal is to show how fast, or slow, the HATVP works on the submitted declarations.
+            We want to see the difference between revenue sources, whether from a job activity, or from elective income.  
             <br />
-            We also show the document types submitted, as well as their geographical origin.
+            We also showcase gender inequality.
           </p>
         </div>
 
