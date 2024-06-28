@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label, Cell, Legend } from 'recharts';
 import Papa from 'papaparse';
 
-const RevenuePerCategory = () => {
+const RevenuePerCategoryPerYear = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`./datasets/revenue/total_revenue_per_revenue_category_all_amounts.csv`)
+    fetch(`./datasets/revenue/total_revenue_per_revenue_category_per_year_all_amounts.csv`)
       .then(response => response.text())
       .then(text => {
         Papa.parse(text, {
@@ -14,8 +14,10 @@ const RevenuePerCategory = () => {
           skipEmptyLines: true,
           complete: (result) => {
             const parsedData = result.data.map(row => ({
-              revenue_source: row.revenue_source,
-              total_amount: parseFloat(row.total_amount),
+              year: row.year,
+              job_revenue: parseFloat(row.job_revenue),
+              elective_revenue: parseFloat(row.elective_revenue),
+              executive_revenue: parseFloat(row.executive_revenue),
             }));
             setData(parsedData);
             console.log(parsedData)
@@ -28,7 +30,11 @@ const RevenuePerCategory = () => {
   }, []);
 
   // Define a color palette compatible with color-blind people
-  const COLORS = ['#0072B2', '#D55E00', '#E69F00'];
+  const COLORS = {
+    job_revenue: '#0072B2',
+    elective_revenue: '#D55E00',
+    executive_revenue: '#E69F00'
+  };
 
   // Function to format the Y-axis ticks to "k€"
   const formatYAxis = (tickItem) => {
@@ -37,10 +43,9 @@ const RevenuePerCategory = () => {
 
   return (
     <section className="mb-6 p-4 bg-white">
-      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Total revenue per source</h2>
+      <h2 className="text-xl font-extrabold text-gray-900 mb-4">Total revenue per source per year</h2>
       <ResponsiveContainer width="100%" height={400}>
         <BarChart
-          layout="horizontal"
           width={500}
           height={300}
           data={data}
@@ -49,22 +54,21 @@ const RevenuePerCategory = () => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <YAxis type="number" tickFormatter={formatYAxis}>
+          <XAxis dataKey="year">
+            <Label value="Year" position="insideBottom" dy={10} />
+          </XAxis>
+          <YAxis tickFormatter={formatYAxis}>
             <Label value="Total Amount" angle={270} position="insideLeft" offset={-5} dx={-10} />
           </YAxis>
-          <XAxis type="category" dataKey="revenue_source">
-            <Label value="Revenue Source" angle={0} position="insideBottom" dy={20} />
-          </XAxis>
-          <Tooltip />
-          <Bar dataKey="total_amount">
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Bar>
+          <Tooltip formatter={(value) => `${(value / 1000).toFixed(0)}k€`} />
+          <Legend />
+          <Bar dataKey="job_revenue" stackId="a" fill={COLORS.job_revenue} />
+          <Bar dataKey="elective_revenue" stackId="a" fill={COLORS.elective_revenue} />
+          <Bar dataKey="executive_revenue" stackId="a" fill={COLORS.executive_revenue} />
         </BarChart>
       </ResponsiveContainer>
     </section>
   );
 }
 
-export default RevenuePerCategory;
+export default RevenuePerCategoryPerYear;
