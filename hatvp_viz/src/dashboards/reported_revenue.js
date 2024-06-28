@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import RevenuePerCategory from './../plots/barplot_revenue_per_category.js';
 import RevenuePerCategoryPerYear from './../plots/barplot_revenue_per_category_per_year.js';
 import RevenuePerGenderPerYear from './../plots/barplot_revenue_per_year_per_gender.js';
+import TotalGenderRevenue from './../plots/total_gender_revenue.js';
 
 const ReportedRevenue = () => {
   const [dataset, setDataset] = useState('full');
@@ -56,7 +57,7 @@ const ReportedRevenue = () => {
           <div className=" rounded-lg shadow p-4"><RevenuePerCategory /></div>
           <div className=" rounded-lg shadow p-4"><RevenuePerCategoryPerYear /></div>
           <div className=" rounded-lg shadow p-4"><RevenuePerGenderPerYear /></div>
-          <div className=" rounded-lg shadow p-4"><RevenuePerCategory /></div>
+          <div className=" rounded-lg shadow p-4"><TotalGenderRevenue /></div>
         </div>
 
         <div className="mb-6">
