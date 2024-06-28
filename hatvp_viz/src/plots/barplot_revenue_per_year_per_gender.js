@@ -65,7 +65,7 @@ const RevenuePerGenderPerYear = () => {
             onChange={() => setChartType('stacked')}
             className="form-radio text-indigo-600"
           />
-          <span className="ml-2 text-gray-800"> Stacked Bar Chart </span>
+          <span className="ml-1 mr-2 text-gray-800"> Stacked Bar Chart </span>
         </label>
         <label className="inline-flex items-center">
           <input
@@ -75,7 +75,7 @@ const RevenuePerGenderPerYear = () => {
             onChange={() => setChartType('percentage')}
             className="form-radio text-indigo-600"
           />
-          <span className="ml-2 text-gray-800"> 100% Height Bar Chart </span>
+          <span className="ml-1 mr-2 text-gray-800"> 100% Height Bar Chart </span>
         </label>
       </div>
       <ResponsiveContainer width="100%" height={400}>
