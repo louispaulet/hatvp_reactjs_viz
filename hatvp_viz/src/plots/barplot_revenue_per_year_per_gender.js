@@ -4,6 +4,7 @@ import Papa from 'papaparse';
 
 const RevenuePerGenderPerYear = () => {
   const [data, setData] = useState([]);
+  const [chartType, setChartType] = useState('stacked');
 
   useEffect(() => {
     fetch(`./datasets/revenue/declared_value_per_gender_and_year_all_amounts.csv`)
@@ -19,7 +20,6 @@ const RevenuePerGenderPerYear = () => {
               amount: parseFloat(row.amount),
             }));
             setData(parsedData);
-            console.log(parsedData);
           },
         });
       })
@@ -28,10 +28,10 @@ const RevenuePerGenderPerYear = () => {
       });
   }, []);
 
-  // Define a color palette compatible with color-blind people
+  // Define the updated color palette
   const COLORS = {
-    F: '#E69F00',
-    M: '#0072B2'
+    F: '#ff69b4',
+    M: '#4169e1'
   };
 
   // Function to format the Y-axis ticks to "k€"
@@ -56,11 +56,34 @@ const RevenuePerGenderPerYear = () => {
   return (
     <section className="mb-6 p-4 bg-white">
       <h2 className="text-xl font-extrabold text-gray-900 mb-4">Total revenue per gender per year</h2>
+      <div className="mb-4">
+        <label className="inline-flex items-center">
+          <input
+            type="radio"
+            value="stacked"
+            checked={chartType === 'stacked'}
+            onChange={() => setChartType('stacked')}
+            className="form-radio text-indigo-600"
+          />
+          <span className="ml-2 text-gray-800"> Stacked Bar Chart </span>
+        </label>
+        <label className="inline-flex items-center">
+          <input
+            type="radio"
+            value="percentage"
+            checked={chartType === 'percentage'}
+            onChange={() => setChartType('percentage')}
+            className="form-radio text-indigo-600"
+          />
+          <span className="ml-2 text-gray-800"> 100% Height Bar Chart </span>
+        </label>
+      </div>
       <ResponsiveContainer width="100%" height={400}>
         <BarChart
           width={500}
           height={300}
           data={transformedData}
+          stackOffset={chartType === 'percentage' ? 'expand' : 'none'}
           margin={{
             top: 20, right: 30, left: 30, bottom: 20,
           }}
