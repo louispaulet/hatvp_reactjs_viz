@@ -14,15 +14,19 @@ const Home = () => {
         
         <div className="flex flex-col space-y-6">
           {/* Links to plots */}
-          <Link className="border-2 border-blue-700 text-blue-700 text-center py-4 px-8 rounded-lg shadow-lg hover:bg-blue-700 hover:text-white transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-3 text-lg" to="/gender_equality">
+          <Link className="border-2 border-blue-700 text-black text-center py-4 px-8 rounded-lg shadow-lg hover:bg-blue-700 hover:text-white transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-3 text-lg" to="/gender_equality">
             <span role="img" aria-label="gender equality">👩👨</span>
             <span>Gender Equality Dashboard</span>
           </Link>
-          <Link className="border-2 border-gray-700 text-gray-700 text-center py-4 px-8 rounded-lg shadow-lg hover:bg-gray-700 hover:text-white transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-3 text-lg" to="/publication_rate">
+          <Link className="border-2 border-gray-700 text-black text-center py-4 px-8 rounded-lg shadow-lg hover:bg-gray-700 hover:text-white transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-3 text-lg" to="/publication_rate">
             <span role="img" aria-label="publication rate">⌛️</span>
             <span>Publication Rate Dashboard</span>
           </Link>
-          <Link className="border-2 border-green-700 text-green-700 text-center py-4 px-8 rounded-lg shadow-lg hover:bg-green-700 hover:text-white transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-3 text-lg" to="/declaration_reader">
+          <Link className="border-2 border-red-700 text-black text-center py-4 px-8 rounded-lg shadow-lg hover:bg-red-700 hover:text-white transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-3 text-lg" to="/reported_revenue">
+            <span role="img" aria-label="publication rate">💰</span>
+            <span>Reported Revenue Dashboard</span>
+          </Link>
+          <Link className="border-2 border-green-700 text-black text-center py-4 px-8 rounded-lg shadow-lg hover:bg-green-700 hover:text-white transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center space-x-3 text-lg" to="/declaration_reader">
             <span role="img" aria-label="declaration reader">📜</span>
             <span>Declaration Reader</span>
           </Link>
