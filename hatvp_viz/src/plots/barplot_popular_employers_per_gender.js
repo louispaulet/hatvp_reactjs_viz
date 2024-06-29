@@ -84,8 +84,8 @@ const PopularEmployersPerYear = () => {
           </YAxis>
           <Tooltip formatter={(value) => `${(value / 1000).toFixed(0)}k€`} />
           <Legend verticalAlign="top" />
-          <Bar dataKey="F_revenue" stackId="a" fill={COLORS.F_revenue} />
-          <Bar dataKey="M_revenue" stackId="a" fill={COLORS.M_revenue} />
+          <Bar dataKey="F_revenue" stackId="a" fill={COLORS.F_revenue} name="Women" />
+          <Bar dataKey="M_revenue" stackId="a" fill={COLORS.M_revenue} name="Men" />
         </BarChart>
       </ResponsiveContainer>
       <div className="flex justify-between mt-4">

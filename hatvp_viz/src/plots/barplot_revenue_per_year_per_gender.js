@@ -97,8 +97,8 @@ const RevenuePerGenderPerYear = () => {
           </YAxis>
           <Tooltip formatter={(value) => `${(value / 1000).toFixed(0)}k€`} />
           <Legend />
-          <Bar dataKey="F" stackId="a" fill={COLORS.F} name="Female" />
-          <Bar dataKey="M" stackId="a" fill={COLORS.M} name="Male" />
+          <Bar dataKey="F" stackId="a" fill={COLORS.F} name="Women" />
+          <Bar dataKey="M" stackId="a" fill={COLORS.M} name="Men" />
         </BarChart>
       </ResponsiveContainer>
     </section>

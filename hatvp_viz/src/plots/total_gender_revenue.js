@@ -17,7 +17,8 @@ const TotalGenderRevenue = () => {
               .filter(entry => entry.amount && entry.gender)  // Filter out any incomplete rows
               .map(entry => ({
                 ...entry,
-                amount: parseFloat(entry.amount)
+                amount: parseFloat(entry.amount),
+                gender: entry.gender === 'F' ? 'Women' : entry.gender === 'M' ? 'Men' : entry.gender
               }));
 
             // Calculate total amount
