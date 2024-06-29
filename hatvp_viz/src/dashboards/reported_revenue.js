@@ -4,6 +4,7 @@ import RevenuePerCategoryPerYear from './../plots/barplot_revenue_per_category_p
 import RevenuePerGenderPerYear from './../plots/barplot_revenue_per_year_per_gender.js';
 import TotalGenderRevenue from './../plots/total_gender_revenue.js';
 import PopularEmployersPerYear from './../plots/barplot_popular_employers_per_gender.js';
+import PopularJobTitlesPerYear from './../plots/barplot_popular_job_titles_per_gender.js';
 
 const ReportedRevenue = () => {
   const [dataset, setDataset] = useState('full');
@@ -60,6 +61,7 @@ const ReportedRevenue = () => {
           <div className=" rounded-lg shadow p-4"><TotalGenderRevenue /></div>
           <div className=" rounded-lg shadow p-4"><RevenuePerGenderPerYear /></div>
           <div className=" rounded-lg shadow p-4"><PopularEmployersPerYear /></div>
+          <div className=" rounded-lg shadow p-4"><PopularJobTitlesPerYear /></div>
         </div>
 
         <div className="mb-6">
