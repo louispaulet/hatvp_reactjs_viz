@@ -1,5 +1,7 @@
 # HATVP ReactJS dataviz : Transparency Watch 📊
 
+🚀 The project is live here:  [https://hatvp-dataviz.thefrenchartist.dev](https://hatvp-dataviz.thefrenchartist.dev/)
+
 Welcome to **Transparency Watch**, a project dedicated to promoting transparency and accountability in public life through insightful data visualizations. We leverage the HATVP (Haute Autorité pour la transparence de la vie publique) datasets to monitor the declarations of interest of representatives and registered lobbying organizations.
 
 ## Table of Contents
