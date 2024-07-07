@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+    console.log('My Secret:', process.env.REACT_APP_GROQ_API_KEY);
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-300 via-gray-200 to-red-300 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-lg w-full space-y-12 p-12 bg-white rounded-xl shadow-lg">
