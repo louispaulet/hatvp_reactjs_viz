@@ -23,7 +23,7 @@ jobs:
 
     - name: Build the project
       env:
-        REACT_APP_MY_SECRET: ${{ secrets.GROQ_API_KEY }}
+        REACT_APP_MY_SECRET: ${{ secrets.REACT_APP_GROQ_API_KEY }}
       run: npm run build
 
     - name: Deploy to GitHub Pages
